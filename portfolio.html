@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rosh — Robotics Engineer</title>
+  <meta name="description"
+    content="Portfolio of Rosh — Robotics Engineer specializing in autonomous systems, ROS, embedded control and computer vision." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="portfolio.css" />
+</head>
+
+<body>
+  <!-- Interactive robotics background (nodes + radar sweep) -->
+  <canvas id="robo-bg"></canvas>
+
+  <!-- Robotics HUD overlay (corner brackets only) -->
+  <div class="hud" aria-hidden="true">
+    <div class="hud-corner tl"></div>
+    <div class="hud-corner tr"></div>
+    <div class="hud-corner bl"></div>
+    <div class="hud-corner br"></div>
+  </div>
+
+  <!-- Header -->
+  <header id="header">
+    <a href="#home" class="logo"><span>R</span>osh<i class="bx bx-chip"></i></a>
+    <nav>
+      <ul class="navlist">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="right-header">
+      <a href="#contact" class="btn">Hire me <i class='bx bx-right-arrow-alt'></i></a>
+      <div class="menu-icon">
+        <div class="bar"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Grid background -->
+  <div class="grid-bg"></div>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <p class="eyebrow"><span class="dot"></span> Available for robotics roles</p>
+      <h1><span class="greet">Hi, I'm</span> <br>
+        <span class="grad">Roshan Sharma</span>
+      </h1>
+      <div class="text-animate">
+        <h2>Aspiring Robotics & Cloud Engineer</h2>
+        <span class="paint" aria-hidden="true">Aspiring Robotics & Cloud Engineer</span>
+        <span class="slider-bar" aria-hidden="true"></span>
+      </div>
+      <p class="role-line"><span class="prompt">&gt;</span> <span id="typed-role"></span><span class="caret">_</span>
+      </p>
+      <p class="lead">I’m a Robotics Engineering student passionate about building intelligent autonomous systems.
+        Alongside robotics, I explore cloud computing, DevOps, and modern infrastructure technologies including AWS,
+        Docker, and Kubernetes to create scalable, real-world solutions.</p>
+      <div class="hero-meta">
+        <div>
+          <h3>3+</h3>
+          <p>Robotics projects</p>
+        </div>
+        <div>
+          <h3>ROS2</h3>
+          <p>Nav · MoveIt · Gazebo</p>
+        </div>
+        <div>
+          <h3>Cloud</h3>
+          <p>AWS, DevOps</p>
+        </div>
+      </div>
+      <div class="cta-row">
+        <a href="#projects" class="btn">View projects <i class='bx bx-right-arrow-alt'></i></a>
+        <a href="mailto:Roshansharma9591@gmail.com?subject=Let's%20connect" class="btn btn-ghost"><i
+            class='bx bx-envelope'></i> Contact me</a>
+      </div>
+      <div class="socials">
+        <a href="https://github.com/Rosh264" target="_blank" rel="noreferrer" aria-label="GitHub"><i
+            class='bx bxl-github'></i></a>
+        <a href="https://linkedin.com/in/roshan-sharma-rosh" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i
+            class='bx bxl-linkedin'></i></a>
+        <a href="https://instagram.com/roshan_rosh_264" target="_blank" rel="noreferrer" aria-label="Instagram"><i
+            class='bx bxl-instagram'></i></a>
+        <a href="mailto:Roshansharma9591@gmail.com" aria-label="Email"><i class='bx bx-envelope'></i></a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="orbit"><span></span><span></span><span></span></div>
+      <div class="photo-frame">
+        <img src="assests/profile.png" alt="Portrait of Rosh" />
+      </div>
+      <div class="chip chip-1"><i class='bx bx-cog bx-spin'></i> ROS2</div>
+      <div class="chip chip-2"><i class='bx bx-pulse'></i> SLAM</div>
+      <div class="chip chip-3"><i class='bx bx-code-alt'></i> Python · C++</div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="about">
+    <p class="section-label">// about_me</p>
+    <h2 class="section-title">Engineering machines that <span class="grad">think and move</span>.</h2>
+    <div class="about-grid">
+      <div class="about-photo">
+        <img src="assests/meNrobo.jpg" alt="Rosh" />
+      </div>
+      <div class="about-text">
+        <p>I'm a final-year Robotics Engineering student with a strong interest in autonomous systems, software
+          development, and cloud technologies. My journey started with robotics, but over time I became equally
+          fascinated by the infrastructure that powers modern applications.</p>
+        <p>I enjoy working with ROS2, Python, C++, embedded systems, and robotic simulations, while also learning cloud
+          computing, AWS services, Docker, Kubernetes, and DevOps practices.</p>
+        <p>My goal is to bridge the gap between robotics and scalable software systems by building solutions that are
+          both intelligent and reliable. I'm constantly learning, building projects, and exploring new technologies that
+          help turn ideas into real-world products</p>
+        <button id="edu-toggle-btn" class="btn btn-ghost btn-sm">
+          <i class='bx bxs-graduation'></i> Education <i class='bx bx-chevron-down' id="edu-arrow"></i>
+        </button>
+        <div class="qualification-grid" id="edu-grid">
+          <div class="qualification-card">
+            <span class="qual-label">Degree (2023 - 2027)</span>
+            <h3>B.E. in Robotics Engineering</h3>
+            <p>Garden City University, Bengaluru. Currently in 7th Semester, focusing on autonomous mobile robotics,
+              control systems, and cloud infrastructure.</p>
+          </div>
+          <div class="qualification-card">
+            <span class="qual-label">PU / 12th (2021 - 2023)</span>
+            <h3>Indiranagar Composite PU College</h3>
+            <p>12th Standard (PCMB), Bengaluru. Built the foundation for advanced mathematics, physics, and science
+              streams.</p>
+          </div>
+          <div class="qualification-card">
+            <span class="qual-label">10th Standard (2021)</span>
+            <h3>HAL East Primary &amp; High School</h3>
+            <p>Secondary School Leaving Certificate (SSLC), Bengaluru. Developed early interest in tech, electronics,
+              and logical problem solving.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+
+  <section id="skills" class="skills">
+    <p class="section-label">// tech_stack</p>
+    <h2 class="section-title">Core tools & technologies</h2>
+    <div class="honeycomb">
+      <!-- Row 1: 3 icons -->
+      <div class="hc-row">
+        <div class="hc-cell">
+          <div class="hc-icon"><img src="assests/python-icon.png" alt="Python"></div>
+          <span>Python</span>
+        </div>
+        <div class="hc-cell">
+          <div class="hc-icon"><img src="assests/C++icon.png" alt="C++"></div>
+          <span>C++</span>
+        </div>
+        <div class="hc-cell">
+          <div class="hc-icon"><img src="assests/Ros2-icon.png" alt="ROS 2"></div>
+          <span>ROS 2</span>
+        </div>
+      </div>
+      <!-- Row 2: 4 icons (offset) -->
+      <div class="hc-row hc-offset">
+        <div class="hc-cell">
+          <div class="hc-icon"><img src="assests/linux-icon.png" alt="Linux"></div>
+          <span>Linux</span>
+        </div>
+        <div class="hc-cell">
+          <div class="hc-icon"><img src="assests/AWS-icon.png" alt="AWS"></div>
+          <span>AWS</span>
+        </div>
+        <div class="hc-cell">
+          <div class="hc-icon"><img src="assests/Docker-icon.png" alt="Docker"></div>
+          <span>Docker</span>
+        </div>
+        <div class="hc-cell">
+          <div class="hc-icon"><img src="assests/Kubernetes-icon.png" alt="Kubernetes"></div>
+          <span>Kubernetes</span>
+        </div>
+      </div>
+      <!-- Row 3: 5 icons -->
+      <div class="hc-row">
+        <div class="hc-cell">
+          <div class="hc-icon"><img src="assests/Git-icon.png" alt="Git"></div>
+          <span>Git</span>
+        </div>
+        <div class="hc-cell">
+          <div class="hc-icon"><img src="assests/Github-icon.png" alt="GitHub"></div>
+          <span>GitHub</span>
+        </div>
+        <div class="hc-cell">
+          <div class="hc-icon"><img src="assests/vsCode-icon.png" alt="VS Code"></div>
+          <span>VS Code</span>
+        </div>
+        <div class="hc-cell">
+          <div class="hc-icon"><img src="assests/Gazebo-icon.png" alt="Gazebo"></div>
+          <span>Gazebo</span>
+        </div>
+        <div class="hc-cell">
+          <div class="hc-icon"><img src="assests/ansible-icon.png" alt="Ansible"></div>
+          <span>Ansible</span>
+        </div>
+      </div>
+      <!-- Row 4: 4 icons (offset) -->
+      <div class="hc-row hc-offset">
+        <div class="hc-cell">
+          <div class="hc-icon"><img src="assests/mongoDB-icon.png" alt="MongoDB"></div>
+          <span>MongoDB</span>
+        </div>
+        <div class="hc-cell">
+          <div class="hc-icon"><img src="assests/mySQL-icon.png" alt="MySQL"></div>
+          <span>MySQL</span>
+        </div>
+        <div class="hc-cell">
+          <div class="hc-icon"><img src="assests/jenkins-icon.png" alt="Jenkins"></div>
+          <span>Jenkins</span>
+        </div>
+        <div class="hc-cell">
+          <div class="hc-icon"><img src="assests/terraform-icon.png" alt="Terraform"></div>
+          <span>Terraform</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="projects">
+    <p class="section-label">// featured_projects</p>
+    <h2 class="section-title">Projects I've built</h2>
+    <div class="projects-grid">
+      <article class="project-card">
+        <div class="project-visual visual-1">
+          <img src="assests/spider-robot-front1.jpeg" alt="Indoor Delivery Robot" />
+          <!-- <div class="project-tag">Autonomous Navigation</div> -->
+        </div>
+        <div class="project-overlay">
+          <div>
+            <span class="project-kicker">Autonomous Navigation</span>
+            <h3>Quadruped Spider Robot</h3>
+            <p>Four legged robot for smart indoor navigation and waypoint tracking.</p>
+          </div>
+          <div class="project-links">
+            <a href="#"><i class='bx bxl-github'></i> Code</a>
+            <a href="#"><i class='bx bx-link-external'></i> Demo</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-visual visual-2">
+          <img src="assests/university-robot-front1.jpeg" alt="University Robot" />
+          <!-- <div class="project-tag">Computer Vision</div> -->
+        </div>
+        <div class="project-overlay">
+          <div>
+            <span class="project-kicker">Computer Vision</span>
+            <h3>University Robot</h3>
+            <p>Vision-guided robotic model with color detection, picking logic, and motion control.</p>
+          </div>
+          <div class="project-links">
+            <a href="#"><i class='bx bxl-github'></i> Code</a>
+            <a href="#"><i class='bx bx-link-external'></i> Demo</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-visual visual-3">
+          <img src="assests/meNrobo.jpg" alt="Indoor Delivery Robot" />
+          <div class="project-tag">Embedded</div>
+        </div>
+        <div class="project-overlay">
+          <div>
+            <span class="project-kicker">Embedded</span>
+            <h3>Self-Balancing Bot</h3>
+            <p>IMU-driven stabilizer using PID control and real-time firmware tuning.</p>
+          </div>
+          <div class="project-links">
+            <a href="#"><i class='bx bxl-github'></i> Code</a>
+            <a href="#"><i class='bx bx-video'></i> Video</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Experience timeline -->
+  <section id="experience" class="experience">
+    <p class="section-label">// experience</p>
+    <h2 class="section-title">My journey</h2>
+    <div class="journey-container">
+      <!-- Card 1 -->
+      <div class="journey-card">
+        <div class="journey-img-container">
+          <img src="assests/meNrobo.jpg" alt="B.E. in Robotics Engineering" />
+        </div>
+        <div class="journey-details">
+          <h3>B.E. in Robotics Engineering</h3>
+          <table class="journey-table">
+            <tr>
+              <td>
+                <div class="j-label">
+                  <span class="j-icon"><i class='bx bxs-graduation'></i></span>
+                  <span>Institution</span>
+                </div>
+              </td>
+              <td>Garden City University, Bengaluru</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="j-label">
+                  <span class="j-icon"><i class='bx bxs-calendar'></i></span>
+                  <span>Timeline</span>
+                </div>
+              </td>
+              <td>2023 — 2027 (7th Semester)</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="j-label">
+                  <span class="j-icon"><i class='bx bxs-chip'></i></span>
+                  <span>Core Focus</span>
+                </div>
+              </td>
+              <td>Autonomous Mobile Robotics, Embedded Systems, Cloud Computing</td>
+            </tr>
+          </table>
+          <div class="journey-tags">
+            <span class="j-tag">Robotics</span>
+            <span class="j-tag">Autonomous Systems</span>
+            <span class="j-tag">ROS2</span>
+            <span class="j-tag">Cloud &amp; DevOps</span>
+          </div>
+          <a href="#projects" class="btn btn-sm">View Projects <i class='bx bx-right-arrow-alt'></i></a>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="journey-card">
+        <div class="journey-img-container">
+          <img src="assests/redshirt.jpg" alt="Freelance Event Management" />
+        </div>
+        <div class="journey-details">
+          <h3>Freelance Event Management</h3>
+          <table class="journey-table">
+            <tr>
+              <td>
+                <div class="j-label">
+                  <span class="j-icon"><i class='bx bxs-briefcase'></i></span>
+                  <span>Brands</span>
+                </div>
+              </td>
+              <td>Swiggy Mall, Instamart, Blinkit, Bigbasket, Narayana Health Care &amp; others</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="j-label">
+                  <span class="j-icon"><i class='bx bxs-calendar'></i></span>
+                  <span>Timeline</span>
+                </div>
+              </td>
+              <td>2023 — Present</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="j-label">
+                  <span class="j-icon"><i class='bx bxs-award'></i></span>
+                  <span>Role</span>
+                </div>
+              </td>
+              <td>Planned campaigns, on-ground activations, brand visibility, and target delivery</td>
+            </tr>
+          </table>
+          <div class="journey-tags">
+            <span class="j-tag">Campaigns</span>
+            <span class="j-tag">Brand Visibility</span>
+            <span class="j-tag">On-ground Activations</span>
+            <span class="j-tag">Operations</span>
+          </div>
+          <a href="#contact" class="btn btn-sm">Contact Me <i class='bx bx-right-arrow-alt'></i></a>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="journey-card">
+        <div class="journey-img-container">
+          <img src="assests/profile.png" alt="Bharath Finnovation" />
+        </div>
+        <div class="journey-details">
+          <h3>Customer Relations Specialist</h3>
+          <table class="journey-table">
+            <tr>
+              <td>
+                <div class="j-label">
+                  <span class="j-icon"><i class='bx bxs-business'></i></span>
+                  <span>Company</span>
+                </div>
+              </td>
+              <td>Bharath Finnovation (KreditBee)</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="j-label">
+                  <span class="j-icon"><i class='bx bxs-calendar'></i></span>
+                  <span>Timeline</span>
+                </div>
+              </td>
+              <td>2023</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="j-label">
+                  <span class="j-icon"><i class='bx bxs-conversation'></i></span>
+                  <span>Key Skill</span>
+                </div>
+              </td>
+              <td>Outbound communications, persuasion, client relations, and target achievement</td>
+            </tr>
+          </table>
+          <div class="journey-tags">
+            <span class="j-tag">Customer Relations</span>
+            <span class="j-tag">Fintech Products</span>
+            <span class="j-tag">Communication</span>
+          </div>
+          <a href="#contact" class="btn btn-sm">Contact Me <i class='bx bx-right-arrow-alt'></i></a>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="journey-card">
+        <div class="journey-img-container">
+          <img src="assests/spider-robot-front.jpeg" alt="Indiranagar Composite PU College" />
+        </div>
+        <div class="journey-details">
+          <h3>Pre-University Education</h3>
+          <table class="journey-table">
+            <tr>
+              <td>
+                <div class="j-label">
+                  <span class="j-icon"><i class='bx bxs-graduation'></i></span>
+                  <span>Institution</span>
+                </div>
+              </td>
+              <td>Indiranagar Composite PU College, Bengaluru</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="j-label">
+                  <span class="j-icon"><i class='bx bxs-calendar'></i></span>
+                  <span>Timeline</span>
+                </div>
+              </td>
+              <td>2021 — 2023</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="j-label">
+                  <span class="j-icon"><i class='bx bxs-book'></i></span>
+                  <span>Program</span>
+                </div>
+              </td>
+              <td>12th Standard (PCMB - Physics, Chemistry, Mathematics, Biology)</td>
+            </tr>
+          </table>
+          <div class="journey-tags">
+            <span class="j-tag">PCMB</span>
+            <span class="j-tag">Science Stream</span>
+            <span class="j-tag">Analytical Thinking</span>
+          </div>
+          <a href="#about" class="btn btn-sm">About Me <i class='bx bx-right-arrow-alt'></i></a>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="journey-card">
+        <div class="journey-img-container">
+          <img src="assests/spider-robot-side.jpeg" alt="HAL East Primary and High School" />
+        </div>
+        <div class="journey-details">
+          <h3>Secondary Education</h3>
+          <table class="journey-table">
+            <tr>
+              <td>
+                <div class="j-label">
+                  <span class="j-icon"><i class='bx bxs-graduation'></i></span>
+                  <span>Institution</span>
+                </div>
+              </td>
+              <td>HAL East Primary and High School, Bengaluru</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="j-label">
+                  <span class="j-icon"><i class='bx bxs-calendar'></i></span>
+                  <span>Timeline</span>
+                </div>
+              </td>
+              <td>2021</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="j-label">
+                  <span class="j-icon"><i class='bx bxs-book-bookmark'></i></span>
+                  <span>Program</span>
+                </div>
+              </td>
+              <td>10th Standard (SSLC)</td>
+            </tr>
+          </table>
+          <div class="journey-tags">
+            <span class="j-tag">SSLC</span>
+            <span class="j-tag">Schooling</span>
+            <span class="j-tag">Tech &amp; Science Base</span>
+          </div>
+          <a href="#about" class="btn btn-sm">About Me <i class='bx bx-right-arrow-alt'></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <div class="contact-card">
+      <p class="section-label">// let's_build</p>
+      <h2 class="section-title">Got a robot idea? Let's make it move.</h2>
+      <p class="lead">Open to robotics engineering roles, internships and freelance projects. The fastest way to reach
+        me is email.</p>
+      <form class="contact-form" id="contact-form">
+        <div class="row">
+          <input type="text" name="name" placeholder="Your name" required />
+          <input type="email" name="email" placeholder="Your email" required />
+        </div>
+        <input type="text" name="subject" placeholder="Subject" required />
+        <textarea name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+        <button type="submit" class="btn">Send message <i class='bx bx-send'></i></button>
+      </form>
+      <div class="contact-socials">
+        <a href="https://github.com/Rosh264" target="_blank" rel="noreferrer"><i class='bx bxl-github'></i></a>
+        <a href="https://linkedin.com/in/roshan-sharma-rosh" target="_blank" rel="noreferrer"><i
+            class='bx bxl-linkedin'></i></a>
+        <a href="https://instagram.com/roshan_rosh_264" target="_blank" rel="noreferrer"><i
+            class='bx bxl-instagram'></i></a>
+        <a href="mailto:Roshansharma9591@gmail.com"><i class='bx bx-envelope'></i></a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© <span id="year"></span> Rosh — Robotics Engineer.</p>
+  </footer>
+
+  <script defer src="portfolio.js"></script>
+</body>
+
+</html>
