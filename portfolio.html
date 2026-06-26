@@ -14,9 +14,49 @@
     rel="stylesheet" />
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="portfolio.css" />
+  <link rel="stylesheet" href="preloader.css" />
 </head>
 
 <body>
+  <!-- Preloader / Splash Screen -->
+  <div id="preloader">
+    <canvas id="preloader-particles"></canvas>
+    <div class="preloader-stage">
+      
+      <!-- Segmented Rotating Ring -->
+      <div class="seg-ring">
+        <svg viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="48" />
+        </svg>
+      </div>
+
+      <!-- Orbiting Dots Container -->
+      <div class="orbital-dots"></div>
+
+      <!-- Hexagon Wrapper -->
+      <div class="hex-wrapper">
+        <svg class="hex-svg" viewBox="0 0 100 115" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="hexGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#8b5cf6" stop-opacity="1" />
+              <stop offset="100%" stop-color="#22d3ee" stop-opacity="1" />
+            </linearGradient>
+          </defs>
+          <polygon points="50,2.5 97.5,30 97.5,85 50,112.5 2.5,85 2.5,30" />
+        </svg>
+      </div>
+
+      <!-- Central Text -->
+      <div class="preloader-text">
+        <h1 class="preloader-name">
+          <span class="line" id="pre-name-1"></span>
+          <span class="line" id="pre-name-2"></span>
+        </h1>
+      </div>
+
+    </div>
+  </div>
+
   <!-- Interactive robotics background (nodes + radar sweep) -->
   <canvas id="robo-bg"></canvas>
 
@@ -55,7 +95,7 @@
   <!-- Hero -->
   <section id="home" class="hero">
     <div class="hero-content">
-      <p class="eyebrow"><span class="dot"></span> Available for robotics roles</p>
+      <p class="eyebrow"><span class="dot"></span> Available for Robotics & Cloud roles</p>
       <h1><span class="greet">Hi, I'm</span> <br>
         <span class="grad">Roshan Sharma</span>
       </h1>
@@ -66,21 +106,21 @@
       </div>
       <p class="role-line"><span class="prompt">&gt;</span> <span id="typed-role"></span><span class="caret">_</span>
       </p>
-      <p class="lead">I’m a Robotics Engineering student passionate about building intelligent autonomous systems.
+      <p class="lead">I'm a Robotics Engineering student passionate about building intelligent autonomous systems.
         Alongside robotics, I explore cloud computing, DevOps, and modern infrastructure technologies including AWS,
         Docker, and Kubernetes to create scalable, real-world solutions.</p>
       <div class="hero-meta">
         <div>
           <h3>3+</h3>
-          <p>Robotics projects</p>
+          <p>Robotics Projects</p>
         </div>
         <div>
           <h3>ROS2</h3>
           <p>Nav · MoveIt · Gazebo</p>
         </div>
         <div>
-          <h3>Cloud</h3>
-          <p>AWS, DevOps</p>
+          <h3>AWS</h3>
+          <p>Docker · K8s · DevOps</p>
         </div>
       </div>
       <div class="cta-row">
@@ -104,7 +144,7 @@
         <img src="assests/profile.png" alt="Portrait of Rosh" />
       </div>
       <div class="chip chip-1"><i class='bx bx-cog bx-spin'></i> ROS2</div>
-      <div class="chip chip-2"><i class='bx bx-pulse'></i> SLAM</div>
+      <div class="chip chip-2"><i class='bx bx-cloud'></i> AWS</div>
       <div class="chip chip-3"><i class='bx bx-code-alt'></i> Python · C++</div>
     </div>
   </section>
@@ -253,12 +293,10 @@
     <div class="projects-grid">
       <article class="project-card">
         <div class="project-visual visual-1">
-          <img src="assests/spider-robot-front1.jpeg" alt="Indoor Delivery Robot" />
-          <!-- <div class="project-tag">Autonomous Navigation</div> -->
+          <img src="assests/spider-robot-front1.jpeg" alt="Quadruped Spider Robot" />
         </div>
         <div class="project-overlay">
           <div>
-            <span class="project-kicker">Autonomous Navigation</span>
             <h3>Quadruped Spider Robot</h3>
             <p>Four legged robot for smart indoor navigation and waypoint tracking.</p>
           </div>
@@ -272,11 +310,9 @@
       <article class="project-card">
         <div class="project-visual visual-2">
           <img src="assests/university-robot-front1.jpeg" alt="University Robot" />
-          <!-- <div class="project-tag">Computer Vision</div> -->
         </div>
         <div class="project-overlay">
           <div>
-            <span class="project-kicker">Computer Vision</span>
             <h3>University Robot</h3>
             <p>Vision-guided robotic model with color detection, picking logic, and motion control.</p>
           </div>
@@ -289,12 +325,10 @@
 
       <article class="project-card">
         <div class="project-visual visual-3">
-          <img src="assests/meNrobo.jpg" alt="Indoor Delivery Robot" />
-          <div class="project-tag">Embedded</div>
+          <img src="assests/meNrobo.jpg" alt="Self-Balancing Bot" />
         </div>
         <div class="project-overlay">
           <div>
-            <span class="project-kicker">Embedded</span>
             <h3>Self-Balancing Bot</h3>
             <p>IMU-driven stabilizer using PID control and real-time firmware tuning.</p>
           </div>
@@ -315,7 +349,7 @@
       <!-- Card 1 -->
       <div class="journey-card">
         <div class="journey-img-container">
-          <img src="assests/meNrobo.jpg" alt="Customer Outreach Executive" />
+          <img src="assests/BFKreditBee.png" alt="Customer Outreach Executive" />
         </div>
         <div class="journey-details">
           <h3>Customer Outreach Executive</h3>
@@ -364,7 +398,7 @@
       <!-- Card 2 -->
       <div class="journey-card">
         <div class="journey-img-container">
-          <img src="assests/redshirt.jpg" alt="Event Management Coordinator" />
+          <img src="assests/EventCoordinator.png" alt="Event Management Coordinator" />
         </div>
         <div class="journey-details">
           <h3>Event Management Coordinator</h3>
@@ -377,7 +411,7 @@
                     <span>Brands</span>
                   </div>
                 </td>
-                <td>Swiggy Mall, Guvi|HCL, Instamart, Pincode by PhonePe, Narayana Health Care</td>
+                <td>Swiggy Mall, Guvi | HCL, Instamart, Pincode by PhonePe, Narayana Health Care</td>
               </tr>
               <tr>
                 <td>
@@ -580,6 +614,7 @@
     <p>© <span id="year"></span> Rosh — Robotics Engineering student.</p>
   </footer>
 
+  <script defer src="preloader.js"></script>
   <script defer src="portfolio.js"></script>
 </body>
 

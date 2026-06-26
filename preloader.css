@@ -1,0 +1,245 @@
+/* ============================================================
+   Preloader – Hexagon Intro (Futuristic · Minimal · Premium)
+   ============================================================ */
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Poppins:wght@300;400;500&display=swap');
+
+/* Lock scroll */
+body.preloader-active {
+  overflow: hidden !important;
+}
+
+/* ---- Full-screen overlay ---- */
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+#preloader.done {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Particle canvas behind everything */
+#preloader-particles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* ---- Central stage ---- */
+.preloader-stage {
+  position: relative;
+  width: 340px;
+  height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+/* ---- Hexagon ---- */
+.hex-wrapper {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0.6);
+  animation: hexAppear 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.05s forwards;
+}
+
+@keyframes hexAppear {
+  to { opacity: 1; transform: scale(1); }
+}
+
+.hex-svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 18px rgba(139, 92, 246, 0.5))
+          drop-shadow(0 0 40px rgba(59, 130, 246, 0.25));
+}
+
+.hex-svg polygon {
+  fill: none;
+  stroke: url(#hexGrad);
+  stroke-width: 2.5;
+  stroke-linejoin: round;
+}
+
+/* ---- Text inside hexagon ---- */
+.preloader-text {
+  position: absolute;
+  text-align: center;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.preloader-name {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 1.65rem;
+  letter-spacing: 3px;
+  color: #ffffff;
+  line-height: 1.3;
+  min-height: 2.6em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.preloader-name .line {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #22d3ee;
+  animation: none; /* JS controls typing */
+}
+
+.preloader-name .line.typing {
+  animation: blinkCaret 0.6s step-end infinite;
+}
+
+.preloader-name .line.done {
+  border-right-color: transparent;
+  animation: none;
+}
+
+@keyframes blinkCaret {
+  50% { border-color: transparent; }
+}
+
+/* ---- Segmented ring ---- */
+.seg-ring {
+  position: absolute;
+  width: 310px;
+  height: 310px;
+  border-radius: 50%;
+  opacity: 0;
+  animation: hexAppear 0.4s ease 0.1s forwards;
+}
+
+.seg-ring svg {
+  width: 100%;
+  height: 100%;
+  animation: spinSlow 8s linear infinite;
+}
+
+@keyframes spinSlow {
+  to { transform: rotate(360deg); }
+}
+
+.seg-ring circle {
+  fill: none;
+  stroke: rgba(139, 92, 246, 0.25);
+  stroke-width: 1.5;
+  stroke-dasharray: 18 12;
+  stroke-linecap: round;
+}
+
+/* ---- Orbital dots ---- */
+.orbital-dots {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  opacity: 0;
+  animation: hexAppear 0.3s ease 0.15s forwards;
+}
+
+.orbital-dot {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22d3ee;
+  box-shadow: 0 0 10px #22d3ee, 0 0 20px rgba(34, 211, 238, 0.4);
+  /* Positioned via JS for orbiting */
+}
+
+.orbital-dot:nth-child(even) {
+  background: #8b5cf6;
+  box-shadow: 0 0 10px #8b5cf6, 0 0 20px rgba(139, 92, 246, 0.4);
+  width: 5px;
+  height: 5px;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 480px) {
+  .preloader-stage {
+    width: 280px;
+    height: 280px;
+  }
+
+  .hex-wrapper {
+    width: 210px;
+    height: 210px;
+  }
+
+  .preloader-name {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+  }
+
+  .preloader-subtitle {
+    font-size: 0.55rem;
+    letter-spacing: 2px;
+  }
+
+  .seg-ring {
+    width: 250px;
+    height: 250px;
+  }
+
+  .orbital-dots {
+    width: 240px;
+    height: 240px;
+  }
+
+  .hex-code-icon {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .preloader-stage {
+    width: 310px;
+    height: 310px;
+  }
+
+  .hex-wrapper {
+    width: 240px;
+    height: 240px;
+  }
+
+  .preloader-name {
+    font-size: 1.4rem;
+  }
+
+  .seg-ring {
+    width: 280px;
+    height: 280px;
+  }
+
+  .orbital-dots {
+    width: 270px;
+    height: 270px;
+  }
+}
