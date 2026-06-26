@@ -710,6 +710,9 @@ header {
   padding: 12px;
   animation: floatY 6s ease-in-out infinite;
   clip-path: polygon(22% 0, 100% 0, 100% 78%, 78% 100%, 0 100%, 0 22%);
+  max-width: 440px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .about-photo::before {
@@ -724,10 +727,10 @@ header {
 
 .about-photo img {
   width: 100%;
-  height: 100%;
+  height: auto;
+  aspect-ratio: 0.85;
   object-fit: cover;
   object-position: center;
-  min-height: 420px;
   border-radius: 14px;
   display: block;
 }
@@ -1082,6 +1085,7 @@ header {
   backdrop-filter: blur(12px);
   box-shadow: 0 10px 40px -15px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; /* Mask the sliding details container */
 }
 
 .journey-card:hover {
@@ -1094,10 +1098,33 @@ header {
   flex-direction: row-reverse;
 }
 
+/* Scroll reveal: initially details are offset horizontally and hidden */
+.journey-card:nth-child(odd) .journey-meta-details {
+  transform: translateX(110%);
+  opacity: 0;
+  filter: blur(4px);
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;
+  transition-delay: 0.2s;
+}
+
+.journey-card:nth-child(even) .journey-meta-details {
+  transform: translateX(-110%);
+  opacity: 0;
+  filter: blur(4px);
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;
+  transition-delay: 0.2s;
+}
+
+.journey-card.revealed .journey-meta-details {
+  transform: translate(0, 0);
+  opacity: 1;
+  filter: blur(0);
+}
+
 .journey-img-container {
   width: 42%;
   flex-shrink: 0;
-  aspect-ratio: 1.5;
+  aspect-ratio: 1.2;
   border-radius: 12px;
   overflow: hidden;
   border: 1px solid var(--border);
@@ -1493,6 +1520,21 @@ footer {
     flex-direction: column !important;
     gap: 24px;
     padding: 24px;
+  }
+
+  .journey-card:nth-child(odd) .journey-meta-details,
+  .journey-card:nth-child(even) .journey-meta-details {
+    transform: translateY(30px);
+    opacity: 0;
+    filter: blur(2px);
+    transition: transform 0.6s ease, opacity 0.6s ease, filter 0.6s ease;
+    transition-delay: 0.1s;
+  }
+
+  .journey-card.revealed .journey-meta-details {
+    transform: translateY(0);
+    opacity: 1;
+    filter: blur(0);
   }
 
   .journey-img-container {

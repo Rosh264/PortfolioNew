@@ -95,6 +95,7 @@ const io = new IntersectionObserver(
       if (entry.isIntersecting) {
         entry.target.style.opacity = "1";
         entry.target.style.transform = "translateY(0)";
+        entry.target.classList.add("revealed");
       }
     });
   },
@@ -108,11 +109,15 @@ document.querySelectorAll(revealSelector).forEach((el) => {
 });
 
 // Safety net: force-show everything after 2s if observer hasn't fired
+// (skip journey-cards — their .revealed is driven purely by scroll)
 setTimeout(() => {
   document.querySelectorAll(revealSelector).forEach((el) => {
     if (el.style.opacity === "0") {
       el.style.opacity = "1";
       el.style.transform = "translateY(0)";
+    }
+    if (!el.classList.contains("journey-card")) {
+      el.classList.add("revealed");
     }
   });
 }, 2000);
