@@ -1379,7 +1379,7 @@ footer {
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 768px) {
   section {
     padding: 90px 6% 60px;
   }
@@ -1545,13 +1545,22 @@ footer {
     font-size: 1.35rem;
   }
 
-  .journey-table td:first-child {
-    width: 110px;
+  .journey-table tr {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 10px 0;
   }
 
   .journey-table td {
-    padding: 8px 4px;
+    padding: 0 !important;
     font-size: 0.88rem;
+    width: 100% !important;
+  }
+
+  .journey-table td:last-child {
+    line-height: 1.5;
+    margin-top: 2px;
   }
 
   .right-header .btn {

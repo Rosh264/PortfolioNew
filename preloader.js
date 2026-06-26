@@ -107,12 +107,12 @@
     if (i1 <= name1.length) {
       line1El.textContent = name1.slice(0, i1);
       i1++;
-      setTimeout(typeLine1, 45);
+      setTimeout(typeLine1, 25);
     } else {
       line1El.classList.remove("typing");
       line1El.classList.add("done");
       line2El.classList.add("typing");
-      setTimeout(typeLine2, 70);
+      setTimeout(typeLine2, 40);
     }
   }
 
@@ -120,18 +120,18 @@
     if (i2 <= name2.length) {
       line2El.textContent = name2.slice(0, i2);
       i2++;
-      setTimeout(typeLine2, 45);
+      setTimeout(typeLine2, 25);
     } else {
       line2El.classList.remove("typing");
       line2El.classList.add("done");
     }
   }
 
-  // Start typing after hexagon appears (0.4s delay)
+  // Start typing immediately as the hexagon appears (50ms delay)
   setTimeout(() => {
     line1El.classList.add("typing");
     typeLine1();
-  }, 400);
+  }, 50);
 
   // ---- Fade out & reveal ----
   function dismissPreloader() {
@@ -139,11 +139,11 @@
     document.body.classList.remove("preloader-active");
     setTimeout(() => {
       preloader.style.display = "none";
-    }, 600);
+    }, 350);
   }
 
-  // Dismiss after ~2s or when page loads, whichever is later
-  const minTime = 1800;
+  // Dismiss after ~1s or when page loads, whichever is later
+  const minTime = 1000;
   const start = Date.now();
   let loaded = false;
 
@@ -161,9 +161,9 @@
     tryDismiss();
   });
 
-  // Fallback: dismiss after 2.8s no matter what
+  // Fallback: dismiss after 1.8s no matter what
   setTimeout(() => {
     loaded = true;
     tryDismiss();
-  }, 2800);
+  }, 1800);
 })();
